@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProAgil.API.Data;
-using ProAgil.API.Model;
 
 namespace ProAgil.API.Controllers
 {
@@ -42,7 +41,7 @@ namespace ProAgil.API.Controllers
         {
             try
             {
-                var results = await _context.Eventos.FirstOrDefaultAsync(x => x.EventoId == id);
+                var results = await _context.Eventos.FirstOrDefaultAsync(x => x.Id == id);
                 return Ok(results);
             }
             catch (Exception)
